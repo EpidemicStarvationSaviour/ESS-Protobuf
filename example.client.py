@@ -19,7 +19,7 @@ def ping():
 def schedule():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = interface_pb2_grpc.AlgorithmStub(channel)
-        response = stub.Schedule(ScheduleRequest(request=ItemList(items={1: 0.5}), num_deliverer=1, itemlists=[ItemList(items={1: 0.5}), ItemList(items={1: 1})], distance=[1, 0.2, 0.5, 2, 2.4]))
+        response = stub.Schedule(ScheduleRequest(request=ItemList(items={1: 0.5}), num_deliverer=1, itemlists=[ItemList(items={1: 0.5}), ItemList(items={1: 1})], distance=[1, 2, 5, 2, 4]))
     print(response)
 
 if __name__ == '__main__':
