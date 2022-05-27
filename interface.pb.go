@@ -123,7 +123,7 @@ type ScheduleRequest struct {
 	NumDeliverer uint32      `protobuf:"varint,2,opt,name=num_deliverer,json=numDeliverer,proto3" json:"num_deliverer,omitempty"`
 	Itemlists    []*ItemList `protobuf:"bytes,3,rep,name=itemlists,proto3" json:"itemlists,omitempty"`
 	// id: 0 purchaser, 1 - n supplier, n+1 - m deliverer
-	// (0, 1) (0, 2) ... (0, n) (1, 1) (1, 2)... (1, m) (2, 1) (2, 2) ... (2, m) ... (n, m)
+	// (0, 1) (0, 2)...(0, n) (1, 2) (1, 3)...(1, m) (2, 3) (2, 4)...(2, m) ... (n, m)
 	Distance []uint64 `protobuf:"varint,4,rep,packed,name=distance,proto3" json:"distance,omitempty"`
 }
 
